@@ -40,12 +40,13 @@ const Navbar = () => {
 
   return (
     <AppBar position="static">
-      <Container maxWidth="xl">
+      <Container>
         <Toolbar disableGutters>
           <Typography
             variant="h6"
             noWrap
             component="div"
+            letterSpacing={3}
             sx={{
               mr: 2,
               display: {

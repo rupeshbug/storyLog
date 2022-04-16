@@ -1,19 +1,20 @@
-import { Typography } from '@mui/material'
-import Head from 'next/head'
-
-
+import { Typography } from '@mui/material';
+import Head from 'next/head';
+import HomeBanner from '../components/home/HomeBanner';
 
 export default function Home() {
-
   return (
-    <div >
+    <div>
       <Head>
         <title>Story Log</title>
-        <meta name="description" content="Dipesh Chaulagain - Personal Blog/Portfolio" />
+        <meta
+          name="description"
+          content="Dipesh Chaulagain - Personal Blog/Portfolio"
+        />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Typography variant='h4'>WELCOME</Typography>
+      <HomeBanner />
     </div>
-  )
+  );
 }
