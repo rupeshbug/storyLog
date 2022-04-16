@@ -2,36 +2,26 @@ import { Container, Button, Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import client from '../utils/contentfulClient';
 import { PlagiarismOutlined } from '@mui/icons-material';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import CategoryDrawer from '../components/blog/CategoryDrawer';
 
 export async function getServerSideProps() {
   let data = await client.getEntries({
-    content_type: 'category',
+    content_type: 'post',
+    limit: 10,
   });
 
   return {
     props: {
-      categories: data.items,
+      posts: data.items,
     },
   };
 }
 
-const Blogs = ({ categories }: any) => {
+const Blogs = ({ posts }: any) => {
   const [drawerOpen, setDrawerOpen] = useState(false);
 
-  useEffect(() => {
-    console.log('cat', categories);
-    // async function getPostsByCategory() {
-    //   const data = await client.getEntries({
-    //     content_type: 'post',
-    //   });
-
-    //   console.log('posts', data);
-    // }
-
-    // getPostsByCategory();
-  }, []);
+  console.log('posts', posts);
 
   return (
     <Container>
@@ -48,13 +38,7 @@ const Blogs = ({ categories }: any) => {
           Recent Posts
         </Typography>
       </Box>
-      {
-        <CategoryDrawer
-          drawerOpen={drawerOpen}
-          setDrawerOpen={setDrawerOpen}
-          categories={categories}
-        />
-      }
+      {<CategoryDrawer drawerOpen={drawerOpen} setDrawerOpen={setDrawerOpen} />}
     </Container>
   );
 };
