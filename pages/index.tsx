@@ -1,8 +1,22 @@
-import { Typography } from '@mui/material';
 import Head from 'next/head';
 import HomeBanner from '../components/home/HomeBanner';
+import RecentBlogs from '../components/home/RecentBlogs';
+import client from '../utils/contentfulClient';
 
-export default function Home() {
+export async function getServerSideProps() {
+  let data = await client.getEntries({
+    content_type: 'post',
+    limit: 3,
+  });
+
+  return {
+    props: {
+      posts: data.items,
+    },
+  };
+}
+
+export default function Home({ posts }: any) {
   return (
     <div>
       <Head>
@@ -15,6 +29,7 @@ export default function Home() {
       </Head>
 
       <HomeBanner />
+      <RecentBlogs posts={posts} />
     </div>
   );
 }

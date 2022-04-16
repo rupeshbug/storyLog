@@ -13,6 +13,7 @@ import { Box } from '@mui/system';
 import BackspaceIcon from '@mui/icons-material/Backspace';
 import { useEffect, useState } from 'react';
 import client from '../../utils/contentfulClient';
+import Link from 'next/link';
 
 const CategoryDrawer = ({ drawerOpen, setDrawerOpen }: any) => {
   const [categories, setCategories] = useState<null | []>(null);
@@ -66,7 +67,11 @@ const CategoryDrawer = ({ drawerOpen, setDrawerOpen }: any) => {
             </Box>
             <List>
               {categories.map((item: any) => (
-                <ListItem button key={item.sys.id}>
+                <ListItem
+                  button
+                  key={item.sys.id}
+                  onClick={() => setDrawerOpen(false)}
+                >
                   <ListItemAvatar>
                     <Avatar
                       variant="square"
@@ -74,7 +79,9 @@ const CategoryDrawer = ({ drawerOpen, setDrawerOpen }: any) => {
                       src={item.fields.banner.fields.file.url}
                     />
                   </ListItemAvatar>
-                  <ListItemText primary={item.fields.name} />
+                  <Link href={`/postCategory/${item.sys.id}`} passHref>
+                    <ListItemText primary={item.fields.name} />
+                  </Link>
                 </ListItem>
               ))}
             </List>

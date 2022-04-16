@@ -29,11 +29,12 @@ const Blogs = ({ posts }: any) => {
           startIcon={<PlagiarismOutlined />}
           onClick={() => setDrawerOpen(true)}
           variant="outlined"
+          size="small"
         >
           Browse Categories
         </Button>
 
-        <Typography sx={{ marginY: '2rem' }} variant="h4">
+        <Typography sx={{ marginY: '2rem' }} variant="h5">
           Recent Posts
         </Typography>
         <Box
@@ -55,6 +56,7 @@ const Blogs = ({ posts }: any) => {
               thumbnail={post.fields.thumbnail.fields.file.url}
               description={post.fields.description}
               postId={post.sys.id}
+              articleNumber={post.fields.articleNum}
             />
           ))}
         </Box>

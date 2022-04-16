@@ -18,6 +18,7 @@ const BlogCard = ({
   thumbnail,
   description,
   postId,
+  articleNumber,
 }: any) => {
   return (
     <Card sx={{ maxWidth: 345 }}>
@@ -39,7 +40,7 @@ const BlogCard = ({
             color="secondary"
             sx={{ width: 24, height: 24, backgroundColor: '#ff8a65' }}
           >
-            1
+            {articleNumber}
           </Avatar>
         }
       />
