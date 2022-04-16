@@ -8,15 +8,16 @@ import {
   CardMedia,
   Typography,
 } from '@mui/material';
+import Link from 'next/link';
 
 const BlogCard = ({
   title,
-  author,
   category,
   date,
   categoryImage,
   thumbnail,
   description,
+  postId,
 }: any) => {
   return (
     <Card sx={{ maxWidth: 345 }}>
@@ -36,7 +37,7 @@ const BlogCard = ({
         action={
           <Avatar
             color="secondary"
-            sx={{ width: 24, height: 24, backgroundColor: '#e67035' }}
+            sx={{ width: 24, height: 24, backgroundColor: '#ff8a65' }}
           >
             1
           </Avatar>
@@ -58,7 +59,9 @@ const BlogCard = ({
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small">Read More</Button>
+        <Link passHref href={`/post/${postId}`}>
+          <Button size="small">Read More</Button>
+        </Link>
       </CardActions>
     </Card>
   );

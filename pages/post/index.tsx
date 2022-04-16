@@ -1,10 +1,10 @@
 import { Container, Button, Typography } from '@mui/material';
 import { Box } from '@mui/system';
-import client from '../utils/contentfulClient';
+import client from '../../utils/contentfulClient';
 import { PlagiarismOutlined } from '@mui/icons-material';
 import { useState } from 'react';
-import CategoryDrawer from '../components/blog/CategoryDrawer';
-import BlogCard from '../components/blog/BlogCard';
+import CategoryDrawer from '../../components/blog/CategoryDrawer';
+import BlogCard from '../../components/blog/BlogCard';
 
 export async function getServerSideProps() {
   let data = await client.getEntries({
@@ -21,8 +21,6 @@ export async function getServerSideProps() {
 
 const Blogs = ({ posts }: any) => {
   const [drawerOpen, setDrawerOpen] = useState(false);
-
-  console.log('posts', posts);
 
   return (
     <Container>
@@ -56,6 +54,7 @@ const Blogs = ({ posts }: any) => {
               }
               thumbnail={post.fields.thumbnail.fields.file.url}
               description={post.fields.description}
+              postId={post.sys.id}
             />
           ))}
         </Box>

@@ -1,3 +1,4 @@
+import { Container } from '@mui/material';
 import client from '../../utils/contentfulClient';
 
 export async function getServerSideProps() {
@@ -16,7 +17,11 @@ export async function getServerSideProps() {
 const PostByCategory = ({ posts }: any) => {
   console.log('posts', posts);
 
-  return <div>PostByCategory</div>;
+  return (
+    <Container>
+      <div>PostByCategory</div>
+    </Container>
+  );
 };
 
 export default PostByCategory;
