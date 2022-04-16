@@ -1,8 +1,11 @@
 let client = require('contentful').createClient({
-  space: `${process.env.NEXT_CONTENTFUL_SPACE_ID || 'fzvx2wvui6oj'}`,
+  space: `${
+    process.env.CONTENTFUL_SPACE_ID ||
+    process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID
+  }`,
   accessToken: `${
-    process.env.NEXT_CONTENTFUL_ACCESS_TOKEN ||
-    'pbAALt0pQPaYcHfzKLDqRIQg3jFsnVKoru6T4teA4fM'
+    process.env.CONTENTFUL_ACCESS_TOKEN ||
+    process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN
   }`,
 });
 
