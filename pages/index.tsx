@@ -27,7 +27,6 @@ export default function Home({ posts }: any) {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
       <HomeBanner />
       <RecentBlogs posts={posts} />
     </div>
