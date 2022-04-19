@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import About from '../components/home/About';
 import HomeBanner from '../components/home/HomeBanner';
 import RecentBlogs from '../components/home/RecentBlogs';
 import client from '../utils/contentfulClient';
@@ -28,6 +29,7 @@ export default function Home({ posts }: any) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <HomeBanner />
+      <About />
       <RecentBlogs posts={posts} />
     </div>
   );
