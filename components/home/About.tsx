@@ -1,11 +1,12 @@
 import { Container, Grid, Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import MyServices from './MyServices';
+import PersonalityTrait from './PersonalityTrait';
 
 const About = () => {
   return (
     <Container>
-      <Box marginY="3rem">
+      <Box marginTop="3rem">
         <Typography color="#fb8c00" gutterBottom variant="h4">
           About Me
         </Typography>
@@ -15,7 +16,7 @@ const About = () => {
 
         <Grid marginTop="2rem" container spacing={4} alignItems="center">
           <Grid item xs={12} md={6}>
-            <Box>1</Box>
+            <PersonalityTrait />
             <Typography marginTop="2rem" fontSize="1.2rem" textAlign="justify">
               I'm a Full Stack Developer. I can create beautiful, interactive
               and fast user interfaces on frontend and backend solutions for
