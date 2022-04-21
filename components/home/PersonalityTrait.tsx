@@ -31,7 +31,7 @@ const PersonalityTrait = () => {
       </Box>
       <Box marginBottom="10px">
         <Box display="flex" justifyContent="space-between" alignItems="center">
-          <Typography variant="h5">Industriousness</Typography>
+          <Typography variant="h5">Industrious</Typography>
           <Typography variant="h5">80%</Typography>
         </Box>
         <LinearProgress

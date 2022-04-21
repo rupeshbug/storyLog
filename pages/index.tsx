@@ -1,5 +1,7 @@
 import Head from 'next/head';
+import Footer from '../components/common/Footer';
 import About from '../components/home/About';
+import ContactMe from '../components/home/ContactMe';
 import HomeBanner from '../components/home/HomeBanner';
 import RecentBlogs from '../components/home/RecentBlogs';
 import client from '../utils/contentfulClient';
@@ -31,6 +33,8 @@ export default function Home({ posts }: any) {
       <HomeBanner />
       <About />
       <RecentBlogs posts={posts} />
+      <ContactMe />
+      <Footer />
     </div>
   );
 }
